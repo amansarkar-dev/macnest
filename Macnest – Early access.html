@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Macnest – Great Mac apps deserve to be discovered</title>
+<meta name="description" content="A curated discovery platform for the best macOS apps. Developers: submit your Mac app for consideration.">
+<link rel="icon" href="/macnest-app-icon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f5f0;--surface:#ffffff;--ink:#16150f;--mute:#6b675d;--line:#e6e2d8;--accent:#f47745;--ok:#2f7a4d;
+--serif:"Instrument Serif",Georgia,"Times New Roman",serif;--sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:40px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}.narrow{max-width:680px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;height:72px}
+.brand{display:block;height:36px;width:auto;max-width:calc(100% - 140px);object-fit:contain;object-position:left center}
+.pill{font-size:13px;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.pill:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:1px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);padding:14px 24px;border-radius:999px;font-size:15px;font-weight:500;transition:opacity .15s,transform .15s}
+.btn:hover{opacity:.85}.btn:active{transform:scale(.99)}.btn[disabled]{opacity:.5;cursor:default}.btn.ghost{background:transparent;color:var(--ink)}
+.hero{padding:104px 0 88px;text-align:center}
+h1{font:400 clamp(46px,7.6vw,96px)/.98 var(--serif);letter-spacing:-.025em;margin:0 auto 28px;max-width:880px}
+h1 em{color:var(--accent)}
+.lede{color:var(--mute);font-size:19px;max-width:540px;margin:0 auto 40px}
+h2{font:400 clamp(34px,4.6vw,54px)/1.05 var(--serif);letter-spacing:-.02em;margin:0 0 14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:64px 40px}
+.panel .intro{text-align:center;margin-bottom:40px}.intro p{color:var(--mute);font-size:18px;margin:0}
+form{display:grid;gap:20px}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+label{display:block;font-size:13.5px;font-weight:500;margin-bottom:8px}
+input,textarea{width:100%;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:0 16px;font:inherit;font-size:16px;outline:none;transition:border-color .15s,box-shadow .15s}
+input{height:52px}textarea{padding:14px 16px;min-height:120px;resize:vertical;line-height:1.5}
+input::placeholder,textarea::placeholder{color:var(--mute);opacity:.7}
+input:focus,textarea:focus{border-color:var(--ink);box-shadow:0 0 0 4px color-mix(in srgb,var(--ink) 8%,transparent)}
+input:user-invalid,textarea:user-invalid{border-color:var(--accent)}
+.count{font-size:12.5px;color:var(--mute);text-align:right;margin-top:6px}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.fine{text-align:center;color:var(--mute);font-size:14px;margin:28px 0 0}
+.status{border-radius:14px;padding:16px 18px;font-size:14.5px;background:var(--surface);border:1px solid var(--line);color:var(--ink);display:none}
+.status.show{display:block}.status.ok{color:var(--ok)}.status.err{color:var(--accent)}
+.status button{margin-top:12px;display:block;padding:9px 16px;font-size:14px}
+.status b{display:block;font-weight:600;color:var(--ink);margin-bottom:4px}
+section.alt{padding:104px 0 40px;text-align:center}.alt p{color:var(--mute);font-size:18px;max-width:460px;margin:0 auto 32px}
+.wl{display:flex;gap:12px;max-width:520px;margin:0 auto}
+.wl input{flex:1 1 auto;min-width:0;height:64px;padding:0 22px;line-height:normal;background:#ffffff;border:1px solid #e6e2d8;border-radius:999px}
+.wl .btn{height:64px;padding:0 24px;white-space:nowrap;flex:none}
+.wlstatus{max-width:520px;margin:16px auto 0;text-align:left}
+footer{margin-top:104px;border-top:1px solid var(--line);padding:32px 0 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mute);font-size:13.5px}
+@media(max-width:700px){.wrap{padding:0 18px}.hero{padding:64px 0 56px}.panel{padding:40px 22px;border-radius:22px}.two{grid-template-columns:1fr}
+.wl{flex-direction:column}.wl input,.wl .btn{width:100%}.lede,.intro p,.alt p{font-size:17px}section.alt{padding-top:72px}footer{margin-top:72px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><img class="brand" src="/macnest-wordmark.png" alt="Macnest" width="1030" height="315"><span class="pill">Early access</span></div>
+
+  <header class="hero" id="top">
+    <h1>Great Mac apps deserve to be <em>discovered.</em></h1>
+    <p class="lede">We’re building a curated discovery platform for the best macOS apps. A place for Mac users to find their next favourite app.</p>
+    <a class="btn" href="#submit">Submit your app ↓</a>
+  </header>
+
+  <section class="panel" id="submit">
+    <div class="narrow">
+      <div class="intro"><h2>Built a Mac app?</h2><p>Submit your app for consideration. We’ll personally review every submission.</p></div>
+      <form id="devForm" novalidate>
+        <div class="two">
+          <div><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Ada Lovelace"></div>
+          <div><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="ada@studio.com"></div>
+        </div>
+        <div class="two">
+          <div><label for="app">App name</label><input id="app" name="app_name" required placeholder="Your app"></div>
+          <div><label for="site">App website</label><input id="site" name="app_website" type="url" inputmode="url" required placeholder="https://yourapp.com"></div>
+        </div>
+        <div><label for="desc">Short app description</label><textarea id="desc" name="description" maxlength="300" required placeholder="What does it do, and who is it for?"></textarea><div class="count"><span id="n">0</span>/300</div></div>
+        <div class="hp" aria-hidden="true"><label>Leave empty<input name="website_url_confirm" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn" type="submit">Submit your app</button>
+        <div class="status" role="status" aria-live="polite"></div>
+      </form>
+      <p class="fine">Free to submit. Every app is reviewed. Not every submission gets featured.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <h2>Just here to discover great Mac apps?</h2>
+    <p>Join the waitlist and we’ll let you know when Macnest opens.</p>
+    <form class="wl" id="wlForm" novalidate>
+      <input type="email" name="email" required aria-label="Email address" autocomplete="email" placeholder="you@email.com">
+      <div class="hp" aria-hidden="true"><input name="website_url_confirm" tabindex="-1" autocomplete="off"></div>
+      <button class="btn ghost" type="submit">Join the waitlist</button>
+    </form>
+    <div class="wlstatus status" role="status" aria-live="polite"></div>
+  </section>
+
+  <footer><span>© 2026 Macnest</span><span>Made for the Mac, by people who love it.</span></footer>
+</div>
+
+<script>
+/* ---- Form backend config ----------------------------------------------
+   Paste endpoints from a form service (Formspree, Basin, Web3Forms, Getform…).
+   Each should accept a JSON POST. Leave empty and the page will NOT claim
+   anything was saved: it falls back to email (if set) or tells the visitor. */
+const CONFIG={
+  submitEndpoint:"https://formspree.io/f/mdegndzq",
+  waitlistEndpoint:"https://formspree.io/f/xyewgppk",
+  fallbackEmail:""       // e.g. "hello@macnest.app" – opens the visitor's email app
+};
+const $=s=>document.querySelector(s);
+const show=(box,cls,html)=>{box.className=box.className.replace(/\b(ok|err|show)\b/g,"").trim()+" show "+cls;box.innerHTML=html};
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+
+async function deliver({form,box,endpoint,kind,subject,okMsg,btn}){
+  const data=Object.fromEntries(new FormData(form));
+  if(data.website_url_confirm){form.reset();return show(box,"ok",esc(okMsg))}   // honeypot: bots only
+  if(!form.checkValidity()){form.reportValidity();return}
+  data._kind=kind;data._sent_at=new Date().toISOString();
+  const label=btn.textContent;btn.disabled=true;btn.textContent="Sending…";
+  try{
+    if(endpoint){
+      const r=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)});
+      if(!r.ok)throw new Error("HTTP "+r.status);
+      form.reset();$("#n").textContent="0";show(box,"ok",esc(okMsg));
+    }else if(CONFIG.fallbackEmail){
+      const body=Object.entries(data).filter(([k])=>!k.startsWith("_")&&k!=="website_url_confirm").map(([k,v])=>k+": "+v).join("\n");
+      location.href="mailto:"+CONFIG.fallbackEmail+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+      show(box,"",`<b>Almost there.</b>Your email app should have opened with your details. Please press send. We haven’t received anything until you do.`);
+    }else{
+      const text=Object.entries(data).filter(([k])=>!k.startsWith("_")&&k!=="website_url_confirm").map(([k,v])=>k+": "+v).join("\n");
+      show(box,"err",`<b>Not sent. This form isn’t connected yet.</b>Nothing has been saved or received. Please check back soon.<button type="button" class="btn ghost" id="cp">Copy my details</button>`);
+      box.querySelector("#cp").onclick=async e=>{try{await navigator.clipboard.writeText(text);e.target.textContent="Copied"}catch{e.target.textContent="Copy failed"}};
+    }
+  }catch(err){
+    show(box,"err",`<b>Something went wrong.</b>Your submission wasn’t sent. Please try again in a moment.`);
+  }finally{btn.disabled=false;btn.textContent=label}
+}
+const dev=$("#devForm"),wl=$("#wlForm");
+dev.addEventListener("submit",e=>{e.preventDefault();deliver({form:dev,box:dev.querySelector(".status"),endpoint:CONFIG.submitEndpoint,kind:"developer_submission",subject:"Macnest app submission",okMsg:"Thank you. Your app has been submitted, and we’ll review it personally.",btn:dev.querySelector("button[type=submit]")})});
+wl.addEventListener("submit",e=>{e.preventDefault();deliver({form:wl,box:$(".wlstatus"),endpoint:CONFIG.waitlistEndpoint,kind:"waitlist",subject:"Macnest waitlist",okMsg:"You’re on the list. We’ll be in touch when Macnest opens.",btn:wl.querySelector("button[type=submit]")})});
+$("#desc").addEventListener("input",e=>$("#n").textContent=e.target.value.length);
+</script>
+</body>
+</html>
