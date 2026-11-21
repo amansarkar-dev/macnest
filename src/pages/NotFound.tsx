@@ -10,7 +10,7 @@ export function NotFound() {
         <p className="eyebrow">404</p>
         <h1>That page isn’t on the shelf.</h1>
         <p className="lede">The link may be old, or the app hasn’t been listed.</p>
-        <Link className="btn btn-primary" to="/">
+        <Link className="btn btn-primary" to="/shelf">
           Back home
         </Link>
       </div>

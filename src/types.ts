@@ -64,6 +64,11 @@ export type Mark =
 
 export type PreviewKind = "launcher" | "tasks" | "capture" | "canvas" | "mail"
 
+export type AppScreenshot = {
+  src: string
+  alt: string
+}
+
 export type MacApp = {
   slug: string
   name: string
@@ -77,4 +82,10 @@ export type MacApp = {
   preview?: PreviewKind
   featured?: number
   added: string
+  /** Who the app is useful for. Omit when that isn’t known. */
+  audience?: string
+  /** Verified feature list. Omit rather than guessing. */
+  features?: string[]
+  /** Real product images only. Each item needs a source and a description. */
+  screenshots?: AppScreenshot[]
 }
